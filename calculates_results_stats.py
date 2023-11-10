@@ -106,7 +106,8 @@ def calculates_results_stats(results_dic):
             num_label_match += 1
             #print("Number of label matches is {}".format(num_label_match))
     #A/B
-    pct_dog_image = num_dog_match / num_dog_images * 100
+    if num_dog_images !=0:
+        pct_dog_image = num_dog_match / num_dog_images * 100
     
     #C/D
     if num_notdog_images > 0:
