@@ -4,7 +4,7 @@
 #                                                                             
 # PROGRAMMER: Akshata Sangam
 # DATE CREATED: 06.11.2023                                 
-# REVISED DATE: 
+# REVISED DATE: 10.11.2023
 # PURPOSE: Create a function calculates_results_stats that calculates the 
 #          statistics of the results of the programrun using the classifier's model 
 #          architecture to classify the images. This function will use the 
