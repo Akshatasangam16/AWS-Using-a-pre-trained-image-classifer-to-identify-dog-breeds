@@ -43,12 +43,14 @@ def get_pet_labels(image_dir):
     #Retrieve the filenames from folder pet_images/
     pet_label_list = listdir(image_dir)
     #Iterate through the list to convert to lower case letters
-    for filename in range(0, len(pet_label_list),1):
+    for filename in range(len(pet_label_list)):
         pet_label_list[filename] = pet_label_list[filename].lower()
     #Iterate through the list to split lower case string by '_'
     #create pet_name list
     pet_name_list = []
     for filename in pet_label_list:
+        if pet_label_list[filename]==".":
+            continue
         split = filename.split("_")
         #print(split)
         pet_name = " "
