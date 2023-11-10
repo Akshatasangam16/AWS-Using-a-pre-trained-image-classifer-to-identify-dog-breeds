@@ -4,7 +4,7 @@
 #                                                                             
 # PROGRAMMER: Akshata Sangam
 # DATE CREATED:   06.11.2023                              
-# REVISED DATE: 
+# REVISED DATE:   10.11.2023
 # PURPOSE: Create a function adjust_results4_isadog that adjusts the results 
 #          dictionary to indicate whether or not the pet image label is of-a-dog, 
 #          and to indicate whether or not the classifier image label is of-a-dog.
@@ -69,7 +69,7 @@ def adjust_results4_isadog(results_dic, dogfile):
     """  
     with open(dogfile) as d:
         lines = d.readlines()
-        strip_lines = [line.rstrip('\n') for line in lines]
+        strip_lines = [line.rstrip for line in lines]
     #print(strip_lines)
     dognames_dic = dict()
     for name in strip_lines:
@@ -90,4 +90,3 @@ def adjust_results4_isadog(results_dic, dogfile):
         else:
             labels.append(0)                 
     print(results_dic)
-    None
