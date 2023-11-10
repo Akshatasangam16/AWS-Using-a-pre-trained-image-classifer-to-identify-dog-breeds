@@ -115,10 +115,12 @@ def calculates_results_stats(results_dic):
     else:
         print("0")
     #E/B
-    pct_dog_breed = num_breed_match / num_dog_images * 100
+    if num_dog_images !=0:
+        pct_dog_breed = num_breed_match / num_dog_images * 100
     
     #Y/Z
-    pct_label_match = num_label_match / num_of_images * 100
+    if num_of_images !=0:
+        pct_label_match = num_label_match / num_of_images * 100
     #Add key-value to the results_stats_dic dictionary
     key = ('n_correct_dogs', 'pct_correct_dogs', 'n_correct_breed', 'pct_correct_breed')
     value = (num_dog_match, pct_dog_image, num_breed_match, pct_dog_breed)
