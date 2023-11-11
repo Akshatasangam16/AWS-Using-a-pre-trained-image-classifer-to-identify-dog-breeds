@@ -71,8 +71,8 @@ def print_results(results_dic, results_stats_dic, model,
     if(print_incorrect_dogs and results_stats_dic['pct_correct_notdogs'] + results_stats_dic['n_correct_dogs'] != results_stats_dic['n_images']):
         print("Incorrectly classified dog images:")
         for key, labels in results_dic.items():
-            if labels[3] == 1 and labels[4] == 0:
-                print(labels[0], labels[1])
+            if results_dic[key][3] != results_dic[key][4]:
+                print("Real: {:>26} Classifier: {:>30}".format(results_dic[key][0], results_dic[key][1]))
     #prints out if print_incorrect_breed = True
     if (print_incorrect_breed and results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']):
         print("Incorrectly classified dog breeds:")
