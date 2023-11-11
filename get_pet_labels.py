@@ -49,7 +49,7 @@ def get_pet_labels(image_dir):
     #create pet_name list
     pet_name_list = []
     for filename in pet_label_list:
-        if pet_label_list[filename]==".":
+        if filename[0]==".":
             continue
         split = filename.split("_")
         #print(split)
