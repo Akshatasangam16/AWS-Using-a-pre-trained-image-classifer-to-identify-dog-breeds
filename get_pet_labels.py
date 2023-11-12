@@ -47,18 +47,17 @@ def get_pet_labels(image_dir):
         pet_label_list[filename] = pet_label_list[filename].lower()
     #Iterate through the list to split lower case string by '_'
     #create pet_name list
-    pet_name_list = []
+    pet_name = []
     for filename in pet_label_list:
-        if filename[0]==".":
-            continue
-        split = filename.split("_")
-        #print(split)
-        pet_name = " "
-        for name in split:
-            if name.isalpha():
-                pet_name += name + " "
-        print(pet_name)
-        pet_name_list.append(pet_name.strip())
+        if filename[0]!=".":
+            split = filename.split("_")
+            #print(split)
+            pet_name = " "
+            for name in split:
+                if name.isalpha():
+                    pet_name += name + " "
+            print(pet_name)
+            pet_name.append(pet_name.strip())
      #Create empty dictionary named results_dic
     results_dic = dict()
     filename_list = listdir(image_dir)
@@ -69,7 +68,7 @@ def get_pet_labels(image_dir):
     for key in range(0, len(filename_list), 1):
         if filename_list[key] not in results_dic:
             label_list = []
-            label_list.append(pet_name_list[key])
+            label_list.append(pet_name[key])
             results_dic[filename_list[key]] = label_list
         else:
             print("Warning: Key = ", filename_list[key], "already exists in results_dic with value = ", results_dic[filename_list[key]])
